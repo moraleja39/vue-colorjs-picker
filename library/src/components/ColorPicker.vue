@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import Color from 'colorjs.io'
 import { syncRef } from '@vueuse/core'
+import Color from 'colorjs.io'
 import ColorChannelSlider from './ColorChannelSlider.vue'
 import ColorSwatch from './ColorSwatch.vue'
+import {computed, ref, shallowRef, watch} from "vue"
 
 const supportedSpaces = ['OKLCH', 'sRGB', 'HSL'] as const
 type SupportedSpaces = (typeof supportedSpaces)[number]

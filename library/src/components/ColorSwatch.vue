@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type Color from 'colorjs.io'
+import {computed, ref, watch} from "vue"
 
 const props = defineProps<{
   color: Color

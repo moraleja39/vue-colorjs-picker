@@ -1,2 +1,1 @@
-export { default as CountButton } from './components/CountButton.vue'
-export type { CountButtonProps } from './components/CountButton.vue'
+export { default as ColorPicker } from './components/ColorPicker.vue'

@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { SliderRoot, SliderThumb, SliderTrack } from 'reka-ui'
 import Color from 'colorjs.io'
-import { clamp } from 'lodash-es'
-import type { CSSProperties } from 'vue'
+import { SliderRoot, SliderThumb, SliderTrack } from 'reka-ui'
+import {computed, type CSSProperties, ref, watch, watchEffect} from 'vue'
 import { getStepCount } from '../utils/color'
-
-const value = ref([0])
+import {clamp} from "../utils/clamp"
 
 const props = defineProps<{
   space: Color.Space
   channel: string
   color: Color
 }>()
+
+const value = ref([0])
 
 const space = computed(() => props.space)
 const spaceName = computed(() => space.value.id)

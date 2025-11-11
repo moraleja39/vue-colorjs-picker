@@ -31,13 +31,17 @@
     "watch": "vite build --watch",
     "build": "run-p type-check build-only",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build --force",
-    "prepare": "pnpm run build"
+    "type-check": "vue-tsc --build --force"
   },
   "peerDependencies": {
     "vue": "^3.5.24"
   },
   "devDependencies": {
     "vite-plugin-dts": "4.5.4"
+  },
+  "dependencies": {
+    "@vueuse/core": "^14.0.0",
+    "colorjs.io": "^0.5.2",
+    "reka-ui": "^2.6.0"
   }
 }
