@@ -1,24 +1,29 @@
 {
-  "name": "coliste",
+  "name": "vue-colorjs-picker",
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@8.15.1",
+  "packageManager": "pnpm@10.21.0",
   "scripts": {
     "dev": "run-p -l library:watch playground:dev",
-    "library:watch": "pnpm --filter \"yourlib\" watch",
-    "library:build": "pnpm --filter \"yourlib\" build",
-    "library:publish": "pnpm --filter \"yourlib\" publish",
+    "library:watch": "pnpm --filter \"@moraleja39/vue-colorjs-picker\" watch",
+    "library:build": "pnpm --filter \"@moraleja39/vue-colorjs-picker\" build",
+    "library:publish": "pnpm --filter \"@moraleja39/vue-colorjs-picker\" publish",
     "playground:dev": "pnpm --filter \"playground\" dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "type-check": "pnpm --filter \"*\" type-check"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.6.3",
-    "@types/node": "^18.19.3",
-    "eslint": "^8.56.0",
-    "npm-run-all": "^4.1.5",
-    "vue": "^3.4.15"
+    "@antfu/eslint-config": "6.2.0",
+    "@types/node": "24.10.0",
+    "@vitejs/plugin-vue": "6.0.1",
+    "@vue/tsconfig": "0.8.1",
+    "eslint": "9.39.1",
+    "npm-run-all": "4.1.5",
+    "typescript": "5.9.3",
+    "vite": "7.2.2",
+    "vue-tsc": "3.1.3",
+    "vue": "3.5.24"
   }
 }

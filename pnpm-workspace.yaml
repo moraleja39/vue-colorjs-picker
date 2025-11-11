@@ -1,3 +1,6 @@
 packages:
   - library
   - playground
+
+onlyBuiltDependencies:
+  - esbuild
