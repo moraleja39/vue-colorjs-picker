@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type Color from 'colorjs.io'
-import {computed, ref, watch} from "vue"
+import { computed, ref, watch } from 'vue'
 
 const props = defineProps<{
   color: Color
@@ -14,7 +14,7 @@ const gamutColorNames = {
   p3: 'P3',
   rec2020: 'Rec.2020',
   prophoto: 'ProPhoto',
-  none: 'None'
+  none: 'None',
 }
 type Gamut = keyof typeof gamutColorNames | 'none'
 const gamutBackgroundColors: Record<Gamut, string> = {
@@ -22,7 +22,7 @@ const gamutBackgroundColors: Record<Gamut, string> = {
   p3: 'oklch(0.894 0.110 75.0)',
   rec2020: 'oklch(0.591 0.192 25.0)',
   prophoto: 'oklch(0.591 0.192 25.0)',
-  none: 'oklch(0.435 0.151 25.0)'
+  none: 'oklch(0.435 0.151 25.0)',
 }
 const currentGamut = ref<Gamut>('none')
 watch(() => props.color, (color) => {

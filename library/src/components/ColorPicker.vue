@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { syncRef } from '@vueuse/core'
 import Color from 'colorjs.io'
+import { computed, ref, shallowRef, watch } from 'vue'
 import ColorChannelSlider from './ColorChannelSlider.vue'
 import ColorSwatch from './ColorSwatch.vue'
-import {computed, ref, shallowRef, watch} from "vue"
 
 const supportedSpaces = ['OKLCH', 'sRGB', 'HSL'] as const
 type SupportedSpaces = (typeof supportedSpaces)[number]
@@ -21,15 +21,16 @@ syncRef(model, color, {
       try {
         const color = new Color(str)
         return color.to(space.value)
-      } catch (e) {
+      }
+      catch (e) {
         console.error(e)
         return color.value
       }
     },
-    rtl: (color) => color.toString()
+    rtl: color => color.toString(),
   },
   immediate: true,
-  flush: 'pre'
+  flush: 'pre',
 })
 
 const swatchGridRowEnd = computed(() => Object.entries(space.value.coords).length + 2)
@@ -48,7 +49,7 @@ function channelValueUpdated(channel: string, value: number) {
     <div class="color-picker__select">
       <slot name="select" :value="spaceId" :options="supportedSpaces" :on-update="(v: SupportedSpaces) => spaceId = v">
         <select v-model="spaceId">
-          <option v-for="space in supportedSpaces" :key="space" :value="space">
+          <option v-for="supportedSpace in supportedSpaces" :key="supportedSpace" :value="supportedSpace">
             {{ space }}
           </option>
         </select>
@@ -76,7 +77,7 @@ function channelValueUpdated(channel: string, value: number) {
       <ColorSwatch :color="color" />
       <div class="color-picker__text-input">
         <slot name="text-input" :value="model" :on-update="(v: string) => model = v">
-          <input type="text" v-model="model" />
+          <input v-model="model" type="text">
         </slot>
       </div>
     </div>

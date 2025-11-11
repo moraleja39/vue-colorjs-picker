@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import Color from 'colorjs.io'
+import type Color from 'colorjs.io'
+import type { CSSProperties } from 'vue'
 import { SliderRoot, SliderThumb, SliderTrack } from 'reka-ui'
-import {computed, type CSSProperties, ref, watch, watchEffect} from 'vue'
+import { computed, ref, watch, watchEffect } from 'vue'
+import { clamp } from '../utils/clamp'
 import { getStepCount } from '../utils/color'
-import {clamp} from "../utils/clamp"
 
 const props = defineProps<{
   space: Color.Space
@@ -38,7 +39,7 @@ const gradient = computed(() => {
 })
 
 const trackStyle = computed<CSSProperties>(() => ({
-  background: `linear-gradient(to right var(--in-space), ${gradient.value})`
+  background: `linear-gradient(to right var(--in-space), ${gradient.value})`,
 }))
 
 const displayColor = computed(() => props.color.display())
@@ -62,7 +63,7 @@ watchEffect(() => {
     </div>
     <div class="channel-slider__input">
       <slot name="input" :value="value[0]" :min="coordMin" :max="coordMax" :step="steps" :on-update="(v: number) => value = [v]">
-        <input type="number" v-model="value[0]" :min="coordMin" :max="coordMax" :step="steps" />
+        <input v-model="value[0]" type="number" :min="coordMin" :max="coordMax" :step="steps">
       </slot>
     </div>
     <SliderRoot
