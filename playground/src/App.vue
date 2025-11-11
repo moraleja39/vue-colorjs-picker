@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { CountButton, type CountButtonProps } from '@moraleja39/vue-colorjs-picker'
+import type { CountButtonProps } from '@moraleja39/vue-colorjs-picker'
+import { CountButton } from '@moraleja39/vue-colorjs-picker'
 import { ref } from 'vue'
 
 const count = ref(0)
