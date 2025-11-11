@@ -12,8 +12,5 @@
   },
   "dependencies": {
     "@moraleja39/vue-colorjs-picker": "workspace:*"
-  },
-  "devDependencies": {
-    "@tsconfig/node24": "24.0.1"
   }
 }
