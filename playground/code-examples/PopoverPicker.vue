@@ -3,11 +3,12 @@ import type { CSSProperties } from 'vue'
 import { ColorPicker } from '@moraleja39/vue-colorjs-picker'
 import Color from 'colorjs.io'
 import Popover from 'primevue/popover'
-import { computed, useTemplateRef } from 'vue'
+import { computed, ref, useTemplateRef } from 'vue'
 
 defineProps<{ name?: string }>()
 const model = defineModel<string>({ required: true })
 const popoverRef = useTemplateRef('popover')
+const colorSpace = ref()
 const textColorLight = new Color('oklch(0.955 0 0)')
 const textColorDark = new Color('oklch(0.045 0 0)')
 
@@ -25,10 +26,10 @@ const buttonStyle = computed<CSSProperties>(() => {
 </script>
 
 <template>
-  <button class="h-12 w-64 rounded-md cursor-pointer" :style="buttonStyle" @click="popoverRef?.toggle">
+  <button :style="buttonStyle" @click="popoverRef?.toggle">
     {{ model }}
   </button>
   <Popover ref="popover">
-    <ColorPicker v-model="model" class="w-full lg:w-120 rounded-sm border border-border" />
+    <ColorPicker v-model="model" v-model:space="colorSpace" />
   </Popover>
 </template>
