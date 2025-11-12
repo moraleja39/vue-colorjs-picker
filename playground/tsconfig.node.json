@@ -12,6 +12,7 @@
     "vitest.config.*",
     "cypress.config.*",
     "nightwatch.conf.*",
-    "playwright.config.*"
+    "playwright.config.*",
+    "gen-examples-html.ts"
   ]
 }

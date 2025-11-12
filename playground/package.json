@@ -8,15 +8,18 @@
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "type-check": "vue-tsc --build --force",
-    "build-only": "vite build"
+    "build-only": "vite build",
+    "prepare": "node gen-examples-html.ts"
   },
   "dependencies": {
     "@fontsource-variable/inter-tight": "^5.2.7",
     "@moraleja39/vue-colorjs-picker": "workspace:*",
     "@primeuix/themes": "^1.2.5",
     "@tailwindcss/vite": "^4.1.17",
+    "@vueuse/core": "^14.0.0",
     "colorjs.io": "0.5.2",
     "primevue": "^4.4.1",
+    "shiki": "^3.15.0",
     "tailwindcss": "^4.1.17"
   }
 }
