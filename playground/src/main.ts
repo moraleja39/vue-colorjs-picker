@@ -1,3 +1,4 @@
+import type { PaletteDesignToken } from '@primeuix/themes/types'
 import { definePreset } from '@primeuix/themes'
 import Aura from '@primeuix/themes/aura'
 import PrimeVue from 'primevue/config'
@@ -7,7 +8,7 @@ import App from './App.vue'
 import '@/assets/main.css'
 import 'vue-colorjs-picker/style.css'
 
-const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]
+const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const
 
 const primePreset = definePreset(Aura, {
   semantic: {

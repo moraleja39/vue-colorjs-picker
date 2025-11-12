@@ -10,6 +10,7 @@
     "library:build": "pnpm --filter \"vue-colorjs-picker\" build && cp ./README.md ./library/README.md",
     "library:publish": "pnpm --filter \"vue-colorjs-picker\" publish",
     "playground:dev": "pnpm --filter \"playground\" dev",
+    "playground:build": "pnpm --filter \"playground\" build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "type-check": "pnpm --filter \"*\" type-check"
