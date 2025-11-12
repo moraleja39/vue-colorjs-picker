@@ -1,5 +1,7 @@
 # vue-colorjs-picker
 
+![Color picker example](docs/picker.png)
+
 A Vue 3 color picker component built on [colorjs.io](https://colorjs.io/).
 
 ## Installation
