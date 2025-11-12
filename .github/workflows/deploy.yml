@@ -30,6 +30,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build lib and playground
+        env:
+          NODE_ENV: production
+          VITE_BASE: /${GITHUB_REPOSITORY#*/}/
         run: |
           pnpm library:build
           pnpm playground:build

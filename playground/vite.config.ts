@@ -1,5 +1,6 @@
-import { fileURLToPath, URL } from 'node:url'
+import * as process from 'node:process'
 
+import { fileURLToPath, URL } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
@@ -11,4 +12,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  base: process.env.VITE_BASE || '/',
 })
