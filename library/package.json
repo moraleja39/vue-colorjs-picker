@@ -1,7 +1,7 @@
 {
   "name": "vue-colorjs-picker",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vue 3 color picker component built on colorjs.io",
   "author": "moraleja39",
   "license": "MIT",
