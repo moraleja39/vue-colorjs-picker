@@ -12,13 +12,13 @@ const color2 = ref('oklch(43% 0.1 127)')
 <template>
   <main>
     <h1>Vue colorjs.io picker</h1>
-    <div class="container">
+    <div class="">
       <h3>Default</h3>
-      <ColorPicker v-model="color" class="picker" />
+      <ColorPicker v-model="color" class="w-120 rounded-sm border" />
     </div>
-    <div class="container">
+    <div class="">
       <h3>With custom controls</h3>
-      <ColorPicker v-model="color2" class="picker">
+      <ColorPicker v-model="color2" class="w-120 rounded-sm border">
         <template #space-select="{ options, value, onUpdate }">
           <Select class="w-full" :options="options.slice()" :model-value="value" @update:model-value="onUpdate" />
         </template>
@@ -35,8 +35,3 @@ const color2 = ref('oklch(43% 0.1 127)')
   </main>
 </template>
 
-<style scoped>
-.picker {
-  width: 400px;
-}
-</style>

@@ -86,9 +86,7 @@ function channelValueUpdated(channel: string, value: number) {
 
 <style module>
 .color-picker {
-  min-width: 16rem;
-  border-radius: 0.25rem;
-  border: 1px solid #ccc;
+  min-width: 24rem;
   padding: 0.5rem;
   display: grid;
   grid-template-columns: 1fr 128px;
