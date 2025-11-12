@@ -45,10 +45,10 @@ function channelValueUpdated(channel: string, value: number) {
 </script>
 
 <template>
-  <div class="color-picker">
-    <div class="color-picker__select">
+  <div :class="$style['color-picker']">
+    <div :class="$style['color-picker__select_container']">
       <slot name="select" :value="spaceId" :options="supportedSpaces" :on-update="(v: SupportedSpaces) => spaceId = v">
-        <select v-model="spaceId">
+        <select :class="$style['color-picker__select']" v-model="spaceId">
           <option v-for="supportedSpace in supportedSpaces" :key="supportedSpace" :value="supportedSpace">
             {{ supportedSpace }}
           </option>
@@ -59,7 +59,7 @@ function channelValueUpdated(channel: string, value: number) {
     <ColorChannelSlider
       v-for="(_, channel) of space.coords"
       :key="channel"
-      class="color-picker__slider"
+      :class="$style['color-picker__slider']"
       :space="space"
       :channel="channel"
       :color="color"
@@ -73,18 +73,18 @@ function channelValueUpdated(channel: string, value: number) {
       </template>
     </ColorChannelSlider>
 
-    <div class="color-picker__swatch" :style="{ gridRowEnd: swatchGridRowEnd }">
+    <div :class="$style['color-picker__swatch']" :style="{ gridRowEnd: swatchGridRowEnd }">
       <ColorSwatch :color="color" />
-      <div class="color-picker__text-input">
+      <div>
         <slot name="text-input" :value="model" :on-update="(v: string) => model = v">
-          <input v-model="model" type="text">
+          <input v-model="model" :class="$style['color-picker__text-input']" type="text">
         </slot>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style module>
 .color-picker {
   min-width: 16rem;
   border-radius: 0.25rem;
@@ -96,11 +96,11 @@ function channelValueUpdated(channel: string, value: number) {
   gap: 0.5rem;
 }
 
-.color-picker__select {
+.color-picker__select_container {
   grid-column: 1 / -1;
 }
 
-.color-picker__select select {
+.color-picker__select {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #ccc;
@@ -119,7 +119,7 @@ function channelValueUpdated(channel: string, value: number) {
   gap: 0.25rem;
 }
 
-.color-picker__text-input input {
+.color-picker__text-input {
   width: 100%;
   padding: 0.25rem;
   border: 1px solid #ccc;
