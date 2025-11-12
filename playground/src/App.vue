@@ -6,12 +6,15 @@ import Select from 'primevue/select'
 import { ref } from 'vue'
 
 import CodeBlock from '@/components/CodeBlock.vue'
+import PopoverPicker from '@/components/PopoverPicker.vue'
+import pickerExample from './assets/examples/PopoverPicker.html?raw'
 import primevueExample from './assets/examples/PrimevueControls.html?raw'
 import simpleExample from './assets/examples/Simple.html?raw'
+import PrimevuePicker from "@/components/PrimevuePicker.vue"
 
 const color = ref('oklch(0.430 0.148 343.0)')
 const color2 = ref('oklch(0.5 0.2 35)')
-// const color3 = ref('oklch(0.632 0.185 275.0)')
+const color3 = ref('oklch(0.632 0.185 275.0)')
 </script>
 
 <template>
@@ -35,25 +38,23 @@ const color2 = ref('oklch(0.5 0.2 35)')
       <h3 class="text-xl mb-3">
         With custom controls
       </h3>
-      <ColorPicker v-model="color2" class="w-full lg:w-120 rounded-sm border border-border">
-        <template #space-select="{ options, value, onUpdate }">
-          <Select class="w-full" :options="options.slice()" :model-value="value" @update:model-value="onUpdate" />
-        </template>
-        <template #slider-input="{ min, max, step, value, onUpdate }">
-          <div class="w-24">
-            <InputNumber :min :max :step :model-value="value" size="small" fluid show-buttons button-layout="stacked" @update:model-value="onUpdate" />
-          </div>
-        </template>
-        <template #text-input="{ value, onUpdate }">
-          <InputText class="text-xs!" size="small" fluid :model-value="value" @update:model-value="onUpdate($event ?? '')" />
-        </template>
-      </ColorPicker>
+      <PrimevuePicker v-model="color2" class="w-full lg:w-120" />
       <div class="mt-2">
         Picked color: {{ color2 }}
       </div>
     </div>
     <div class="example">
       <CodeBlock :code="primevueExample" />
+    </div>
+
+    <div>
+      <h3 class="text-xl mb-3">
+        Popover picker
+      </h3>
+      <PopoverPicker v-model="color3" />
+    </div>
+    <div class="example">
+      <CodeBlock :code="pickerExample" />
     </div>
   </main>
 </template>
