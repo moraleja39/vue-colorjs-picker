@@ -1,5 +1,5 @@
 {
-  "name": "@moraleja39/vue-colorjs-picker",
+  "name": "vue-colorjs-picker",
   "type": "module",
   "version": "0.1.0",
   "description": "A Vue 3 color picker component built on colorjs.io",

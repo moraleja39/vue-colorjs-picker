@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ColorPicker } from '@moraleja39/vue-colorjs-picker'
+import { ColorPicker } from 'vue-colorjs-picker'
 import InputNumber from 'primevue/inputnumber'
 import InputText from 'primevue/inputtext'
 import Select from 'primevue/select'

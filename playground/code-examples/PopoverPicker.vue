@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue'
-import { ColorPicker } from '@moraleja39/vue-colorjs-picker'
+import { ColorPicker } from 'vue-colorjs-picker'
 import Color from 'colorjs.io'
 import Popover from 'primevue/popover'
 import { computed, ref, useTemplateRef } from 'vue'

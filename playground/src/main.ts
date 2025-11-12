@@ -5,7 +5,7 @@ import { createApp } from 'vue'
 
 import App from './App.vue'
 import '@/assets/main.css'
-import '@moraleja39/vue-colorjs-picker/style.css'
+import 'vue-colorjs-picker/style.css'
 
 const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]
 

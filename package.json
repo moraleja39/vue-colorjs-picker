@@ -6,9 +6,9 @@
   "packageManager": "pnpm@10.21.0",
   "scripts": {
     "dev": "run-p -l library:watch playground:dev",
-    "library:watch": "pnpm --filter \"@moraleja39/vue-colorjs-picker\" watch",
-    "library:build": "pnpm --filter \"@moraleja39/vue-colorjs-picker\" build",
-    "library:publish": "pnpm --filter \"@moraleja39/vue-colorjs-picker\" publish",
+    "library:watch": "pnpm --filter \"vue-colorjs-picker\" watch",
+    "library:build": "pnpm --filter \"vue-colorjs-picker\" build",
+    "library:publish": "pnpm --filter \"vue-colorjs-picker\" publish",
     "playground:dev": "pnpm --filter \"playground\" dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
