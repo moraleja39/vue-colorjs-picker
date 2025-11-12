@@ -14,7 +14,7 @@ export interface ColorChannelSliderProps {
 }
 
 const props = withDefaults(defineProps<ColorChannelSliderProps>(), {
-  height: '12px',
+  height: '16px',
 })
 
 const trackHeight = computed(() => (typeof props.height === 'number') ? `${props.height}px` : props.height)
