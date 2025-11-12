@@ -5,9 +5,9 @@ import InputText from 'primevue/inputtext'
 import Select from 'primevue/select'
 import { ref } from 'vue'
 
-import simpleExample from './assets/examples/Simple.html?raw'
+import CodeBlock from '@/components/CodeBlock.vue'
 import primevueExample from './assets/examples/PrimevueControls.html?raw'
-import CodeBlock from "@/components/CodeBlock.vue"
+import simpleExample from './assets/examples/Simple.html?raw'
 
 const color = ref('oklch(0.430 0.148 343.0)')
 const color2 = ref('oklch(0.5 0.2 35)')
@@ -15,15 +15,15 @@ const color2 = ref('oklch(0.5 0.2 35)')
 </script>
 
 <template>
-  <main class="min-h-lvh grid grid-cols-[max-content_1fr] grid-rows-[max-content_max-content_1fr] gap-18 p-6">
-    <h1 class="text-3xl font-semibold col-span-2">
+  <main class="min-h-lvh w-full grid grid-cols-1 lg:grid-cols-[max-content_1fr] lg:grid-rows-[max-content_max-content_1fr] gap-6 xl:gap-18 p-4 md:p-6">
+    <h1 class="text-3xl font-semibold lg:col-span-2">
       Vue <a href="https://colorjs.io" target="_blank">colorjs.io</a> picker
     </h1>
     <div>
       <h3 class="text-xl mb-3">
         Default
       </h3>
-      <ColorPicker v-model="color" class="w-120 rounded-sm border border-border" />
+      <ColorPicker v-model="color" class="w-full lg:w-120 rounded-sm border border-border" />
       <div class="mt-2">
         Picked color: {{ color }}
       </div>
@@ -35,7 +35,7 @@ const color2 = ref('oklch(0.5 0.2 35)')
       <h3 class="text-xl mb-3">
         With custom controls
       </h3>
-      <ColorPicker v-model="color2" class="w-120 rounded-sm border border-border">
+      <ColorPicker v-model="color2" class="w-full lg:w-120 rounded-sm border border-border">
         <template #space-select="{ options, value, onUpdate }">
           <Select class="w-full" :options="options.slice()" :model-value="value" @update:model-value="onUpdate" />
         </template>
