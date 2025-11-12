@@ -50,7 +50,7 @@ function channelValueUpdated(channel: string, value: number) {
       <slot name="select" :value="spaceId" :options="supportedSpaces" :on-update="(v: SupportedSpaces) => spaceId = v">
         <select v-model="spaceId">
           <option v-for="supportedSpace in supportedSpaces" :key="supportedSpace" :value="supportedSpace">
-            {{ space }}
+            {{ supportedSpace }}
           </option>
         </select>
       </slot>
