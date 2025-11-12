@@ -10,7 +10,7 @@ export interface ColorChannelSliderProps {
   space: Color.Space
   channel: string
   color: Color
-  height?: CSSProperties['height']
+  height?: string | number
 }
 
 const props = withDefaults(defineProps<ColorChannelSliderProps>(), {
