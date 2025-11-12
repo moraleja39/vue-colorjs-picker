@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { syncRef } from '@vueuse/core'
 import Color from 'colorjs.io'
-import { computed, ref, shallowRef, watch } from 'vue'
+import { computed, shallowRef, watch } from 'vue'
 import ColorChannelSlider from './ColorChannelSlider.vue'
 import ColorSwatch from './ColorSwatch.vue'
 
 const supportedSpaces = ['OKLCH', 'sRGB', 'HSL'] as const
 type SupportedSpaces = (typeof supportedSpaces)[number]
 
-const spaceId = ref<SupportedSpaces>('OKLCH')
+const spaceId = defineModel<SupportedSpaces>('space', { default: 'OKLCH' })
 const space = computed(() => Color.Space.get(spaceId.value))
 
 const model = defineModel<string>({ required: true })
