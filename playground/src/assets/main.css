@@ -1,5 +1,17 @@
 @import "tailwindcss";
+@import "@fontsource-variable/inter-tight";
+
+@theme {
+    --font-sans: 'Inter Tight Variable', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --color-white: oklch(0.930 0.001 197.1);
+    --color-black: oklch(0.173 0.002 286.2);
+    --color-border: oklch(0.387 0.005 271.3);
+}
 
 body {
+    @apply bg-white text-black font-sans dark:bg-black dark:text-white;
+}
 
+a {
+    @apply underline underline-offset-2;
 }
