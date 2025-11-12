@@ -17,6 +17,8 @@ npm install vue-colorjs-picker
 import { ref } from 'vue'
 import { ColorPicker } from 'vue-colorjs-picker'
 
+import 'vue-colorjs-picker/style.css'
+
 const color = ref('oklch(0.7 0.2 180)')
 </script>
 
