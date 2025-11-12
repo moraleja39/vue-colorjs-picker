@@ -1,12 +1,10 @@
 import { resolve } from 'node:path'
-import tailwindcss from '@tailwindcss/vite'
 import vuePlugin from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 import dtsPlugin from 'vite-plugin-dts'
 
 export default defineConfig({
   plugins: [
-    tailwindcss(),
     vuePlugin(),
     dtsPlugin({
       tsconfigPath: resolve(__dirname, 'tsconfig.lib.json'),
