@@ -11,6 +11,10 @@
     "build-only": "vite build"
   },
   "dependencies": {
-    "@moraleja39/vue-colorjs-picker": "workspace:*"
+    "@moraleja39/vue-colorjs-picker": "workspace:*",
+    "@primeuix/themes": "^1.2.5",
+    "@tailwindcss/vite": "^4.1.17",
+    "primevue": "^4.4.1",
+    "tailwindcss": "^4.1.17"
   }
 }

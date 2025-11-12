@@ -47,8 +47,8 @@ function channelValueUpdated(channel: string, value: number) {
 <template>
   <div :class="$style['color-picker']">
     <div :class="$style['color-picker__select_container']">
-      <slot name="select" :value="spaceId" :options="supportedSpaces" :on-update="(v: SupportedSpaces) => spaceId = v">
-        <select :class="$style['color-picker__select']" v-model="spaceId">
+      <slot name="space-select" :value="spaceId" :options="supportedSpaces" :on-update="(v: SupportedSpaces) => spaceId = v">
+        <select v-model="spaceId" :class="$style['color-picker__select']">
           <option v-for="supportedSpace in supportedSpaces" :key="supportedSpace" :value="supportedSpace">
             {{ supportedSpace }}
           </option>
@@ -105,6 +105,7 @@ function channelValueUpdated(channel: string, value: number) {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 0.25rem;
+  background: oklch(0.2 0 0);
 }
 
 .color-picker__slider {

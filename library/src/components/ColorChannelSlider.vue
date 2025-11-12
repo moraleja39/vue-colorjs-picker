@@ -64,7 +64,7 @@ watchEffect(() => {
   <div class="channel-slider">
     <div class="channel-slider__label">
       <slot name="label" :coord="coord" :min="coordMin" :max="coordMax">
-        <span>{{ coord?.name }}</span>
+        <span>{{ `${coord?.name} ` }}</span>
         <span class="channel-slider__range">({{ coordMin }} - {{ coordMax }})</span>
       </slot>
     </div>
@@ -94,7 +94,7 @@ watchEffect(() => {
   width: 100%;
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: 1fr 72px;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 0.125rem;
 }
@@ -115,7 +115,7 @@ watchEffect(() => {
 }
 
 .channel-slider__input input {
-  width: 100%;
+  width: 72px;
   padding: 0.25rem;
   font-size: 0.875rem;
   border: 1px solid #ccc;
