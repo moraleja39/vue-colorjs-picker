@@ -2,9 +2,14 @@
 import type Color from 'colorjs.io'
 import { computed, ref, watch } from 'vue'
 
-const props = defineProps<{
+export interface ColorSwatchProps {
   color: Color
-}>()
+  showGamut?: boolean
+}
+
+const props = withDefaults(defineProps<ColorSwatchProps>(), {
+  showGamut: true,
+})
 
 const displayColor = computed(() => props.color.toString())
 
@@ -38,7 +43,7 @@ watch(() => props.color, (color) => {
 
 <template>
   <div class="color-swatch" :style="{ backgroundColor: displayColor }">
-    <div class="color-swatch__gamut" :style="{ backgroundColor: gamutBackgroundColors[currentGamut] }">
+    <div v-if="showGamut" class="color-swatch__gamut" :style="{ backgroundColor: gamutBackgroundColors[currentGamut] }">
       {{ gamutColorNames[currentGamut] }}
     </div>
   </div>
