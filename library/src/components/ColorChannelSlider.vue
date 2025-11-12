@@ -6,11 +6,18 @@ import { computed, ref, watch, watchEffect } from 'vue'
 import { clamp } from '../utils/clamp'
 import { getStepCount } from '../utils/color'
 
-const props = defineProps<{
+export interface ColorChannelSliderProps {
   space: Color.Space
   channel: string
   color: Color
-}>()
+  height?: CSSProperties['height']
+}
+
+const props = withDefaults(defineProps<ColorChannelSliderProps>(), {
+  height: '12px',
+})
+
+const trackHeight = computed(() => (typeof props.height === 'number') ? `${props.height}px` : props.height)
 
 const value = ref([0])
 
@@ -124,7 +131,7 @@ watchEffect(() => {
   user-select: none;
   touch-action: none;
   width: 100%;
-  height: 100%;
+  height: v-bind(trackHeight);
 }
 
 .channel-slider__track {
