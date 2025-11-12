@@ -3,11 +3,11 @@ import vuePlugin from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 import dtsPlugin from 'vite-plugin-dts'
 
-// noinspection JSUnusedGlobalSymbols - suppresses "exported but not used" warning in WebStorm
 export default defineConfig({
   plugins: [
     vuePlugin(),
     dtsPlugin({
+      tsconfigPath: resolve(__dirname, 'tsconfig.lib.json'),
       insertTypesEntry: true,
     }),
   ],
