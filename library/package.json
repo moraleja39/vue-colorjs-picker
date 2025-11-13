@@ -5,8 +5,8 @@
   "description": "A Vue 3 color picker component built on colorjs.io",
   "author": "moraleja39",
   "license": "MIT",
-  "keywords": ["vue", "vue3", "color", "picker", "colorjs", "component", "oklch"],
-  "homepage": "https://github.com/skhrvg/yourlib/tree/main/#readme",
+  "keywords": ["vue", "vue3", "color", "color-picker", "colorjs", "component", "oklch"],
+  "homepage": "https://moraleja39.github.io/vue-colorjs-picker/",
   "repository": {
     "type": "git",
     "url": "https://github.com/moraleja39/vue-colorjs-picker.git"
