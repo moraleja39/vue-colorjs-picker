@@ -1,4 +1,4 @@
-# vue-colorjs-picker
+# vue-colorjs-picker [<img src="https://img.shields.io/npm/v/vue-colorjs-picker?style=flat-square" style="vertical-align: baseline;">](https://www.npmjs.com/package/vue-colorjs-picker)
 
 ![Color picker example](docs/picker.png)
 
