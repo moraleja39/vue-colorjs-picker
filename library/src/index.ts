@@ -1,5 +1,6 @@
 export type { ColorChannelSliderProps } from './components/ColorChannelSlider.vue'
 export { default as ColorChannelSlider } from './components/ColorChannelSlider.vue'
+export type { ColorPickerProps } from './components/ColorPicker.vue'
 export { default as ColorPicker } from './components/ColorPicker.vue'
 export type { ColorSwatchProps } from './components/ColorSwatch.vue'
 export { default as ColorSwatch } from './components/ColorSwatch.vue'

@@ -5,11 +5,11 @@ import { computed, shallowRef, watch } from 'vue'
 import ColorChannelSlider from './ColorChannelSlider.vue'
 import ColorSwatch from './ColorSwatch.vue'
 
-export interface Props {
+export interface ColorPickerProps {
   showGamut?: boolean
 }
 
-withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<ColorPickerProps>(), {
   showGamut: true,
 })
 
