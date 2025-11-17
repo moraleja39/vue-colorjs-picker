@@ -5,6 +5,14 @@ import { computed, shallowRef, watch } from 'vue'
 import ColorChannelSlider from './ColorChannelSlider.vue'
 import ColorSwatch from './ColorSwatch.vue'
 
+export interface Props {
+  showGamut?: boolean
+}
+
+withDefaults(defineProps<Props>(), {
+  showGamut: true,
+})
+
 const supportedSpaces = ['OKLCH', 'sRGB', 'HSL'] as const
 type SupportedSpaces = (typeof supportedSpaces)[number]
 
@@ -74,7 +82,7 @@ function channelValueUpdated(channel: string, value: number) {
     </ColorChannelSlider>
 
     <div :class="$style['color-picker__swatch']" :style="{ gridRowEnd: swatchGridRowEnd }">
-      <ColorSwatch :color="color" />
+      <ColorSwatch :color="color" :show-gamut="showGamut" />
       <div>
         <slot name="text-input" :value="model" :on-update="(v: string) => model = v">
           <input v-model="model" :class="$style['color-picker__text-input']" type="text">
