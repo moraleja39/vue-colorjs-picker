@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue'
-import { ColorPicker } from 'vue-colorjs-picker'
 import Color from 'colorjs.io'
 import Popover from 'primevue/popover'
 import { computed, ref, useTemplateRef } from 'vue'
+import { ColorPicker } from 'vue-colorjs-picker'
 
 defineProps<{ name?: string }>()
 const model = defineModel<string>({ required: true })

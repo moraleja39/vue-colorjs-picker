@@ -1,16 +1,13 @@
 <script setup lang="ts">
-import { ColorPicker } from 'vue-colorjs-picker'
-import InputNumber from 'primevue/inputnumber'
-import InputText from 'primevue/inputtext'
-import Select from 'primevue/select'
 import { ref } from 'vue'
+import { ColorPicker } from 'vue-colorjs-picker'
 
 import CodeBlock from '@/components/CodeBlock.vue'
 import PopoverPicker from '@/components/PopoverPicker.vue'
+import PrimevuePicker from '@/components/PrimevuePicker.vue'
 import pickerExample from './assets/examples/PopoverPicker.html?raw'
 import primevueExample from './assets/examples/PrimevueControls.html?raw'
 import simpleExample from './assets/examples/Simple.html?raw'
-import PrimevuePicker from "@/components/PrimevuePicker.vue"
 
 const color = ref('oklch(0.430 0.148 343.0)')
 const color2 = ref('oklch(0.5 0.2 35)')

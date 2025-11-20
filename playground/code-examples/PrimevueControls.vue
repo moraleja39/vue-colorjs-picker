@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ColorPicker } from 'vue-colorjs-picker'
 import InputNumber from 'primevue/inputnumber'
 import InputText from 'primevue/inputtext'
 import Select from 'primevue/select'
 import { ref } from 'vue'
+import { ColorPicker } from 'vue-colorjs-picker'
 
 const color = ref('oklch(0.5 0.2 35)')
 </script>

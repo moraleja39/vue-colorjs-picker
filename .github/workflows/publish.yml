@@ -39,7 +39,7 @@ jobs:
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
           CHANGELOG=$(awk -v ver="$VERSION" '
-            /^## / { 
+            /^## / {
               if (p) { exit };
               if (index($0, "[" ver "]") || index($0, ver)) { p = 1; next }
             }

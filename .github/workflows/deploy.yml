@@ -32,7 +32,7 @@ jobs:
       - name: Build lib and playground
         env:
           NODE_ENV: production
-          VITE_BASE: "/vue-colorjs-picker/"
+          VITE_BASE: /vue-colorjs-picker/
         run: |
           pnpm library:build
           pnpm playground:build
