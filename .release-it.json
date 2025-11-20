@@ -4,5 +4,34 @@
     "commitMessage": "release v${version}",
     "commit": true,
     "tag": true
+  },
+  "npm": {
+    "publish": false
+  },
+  "hooks": {
+    "before:init": ["pnpm lint", "pnpm type-check"],
+    "after:bump": "cp library/package.json library/package.json.bak && jq '.version = \"'${version}'\"' library/package.json.bak > library/package.json && rm library/package.json.bak"
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": {
+        "name": "conventionalcommits",
+        "types": [
+          {
+            "type": "feat",
+            "section": "Features"
+          },
+          {
+            "type": "fix",
+            "section": "Bug Fixes"
+          }
+        ]
+      },
+      "infile": "CHANGELOG.md",
+      "header": "# Changelog",
+      "gitRawCommitsOpts": {
+        "path": "library/"
+      }
+    }
   }
 }
