@@ -1,7 +1,7 @@
 {
   "name": "vue-colorjs-picker",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A Vue 3 color picker component built on colorjs.io",
   "author": "moraleja39",
   "license": "MIT",
@@ -13,7 +13,15 @@
   "bugs": {
     "url": "https://github.com/moraleja39/vue-colorjs-picker/issues"
   },
-  "keywords": ["vue", "vue3", "color", "color-picker", "colorjs", "component", "oklch"],
+  "keywords": [
+    "vue",
+    "vue3",
+    "color",
+    "color-picker",
+    "colorjs",
+    "component",
+    "oklch"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
